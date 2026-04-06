@@ -37,7 +37,8 @@ export async function loadDateRange(dates: Date[]): Promise<(DayData | null)[]> 
 export function buildPitcherGrid(
   dates: Date[],
   dayDataList: (DayData | null)[],
-  teamFilter: string | null
+  teamFilter: string | null,
+  excludeStarters = false
 ): PitcherRow[] {
   // player_id → PitcherRow 맵
   const rowMap = new Map<string, PitcherRow>();
@@ -48,6 +49,7 @@ export function buildPitcherGrid(
 
     for (const app of dayData.appearances) {
       if (teamFilter && app.team_code !== teamFilter) continue;
+      if (excludeStarters && app.is_starter) continue;
 
       const key = app.player_id || `${app.name}_${app.team_code}`;
 

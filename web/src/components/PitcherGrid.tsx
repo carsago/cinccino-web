@@ -7,7 +7,7 @@ type Props = {
 };
 
 function formatInnings(ip: string): string {
-  return ip.includes(".") ? `${ip}이닝` : `${ip}.0이닝`;
+  return ip.includes(".") ? `${ip} 이닝` : `${ip}.0 이닝`;
 }
 
 function formatDateHeader(d: Date): string {

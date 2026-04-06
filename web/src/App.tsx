@@ -10,6 +10,7 @@ const RANGE_OPTIONS = [7, 21] as const;
 export default function App() {
   const [rangeDays, setRangeDays] = useState<7 | 21>(7);
   const [teamFilter, setTeamFilter] = useState<string | null>(null);
+  const [excludeStarters, setExcludeStarters] = useState(false);
   const [rows, setRows] = useState<PitcherRow[]>([]);
   const [dates, setDates] = useState<Date[]>([]);
   const [loading, setLoading] = useState(true);
@@ -27,8 +28,8 @@ export default function App() {
 
   useEffect(() => {
     if (dates.length === 0 || dayDataList.length === 0) return;
-    setRows(buildPitcherGrid(dates, dayDataList, teamFilter));
-  }, [dates, dayDataList, teamFilter]);
+    setRows(buildPitcherGrid(dates, dayDataList, teamFilter, excludeStarters));
+  }, [dates, dayDataList, teamFilter, excludeStarters]);
 
   return (
     <div className="app">
@@ -57,6 +58,12 @@ export default function App() {
         </div>
 
         <div className="range-filter">
+          <button
+            className={excludeStarters ? "active" : ""}
+            onClick={() => setExcludeStarters((v) => !v)}
+          >
+            불펜만
+          </button>
           {RANGE_OPTIONS.map((n) => (
             <button
               key={n}
