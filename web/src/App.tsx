@@ -49,10 +49,11 @@ export default function App() {
           {TEAMS.map((t) => (
             <button
               key={t.code}
-              className={teamFilter === t.code ? "active" : ""}
+              className={`team-logo-btn${teamFilter === t.code ? " active" : ""}`}
               onClick={() => setTeamFilter(t.code)}
+              title={t.name}
             >
-              {t.name}
+              <img src={t.logo} alt={t.name} />
             </button>
           ))}
         </div>

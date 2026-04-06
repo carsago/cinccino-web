@@ -37,17 +37,21 @@ export type PitcherRow = {
 export type TeamInfo = {
   code: string;
   name: string;
+  logo: string;
 };
 
+const LOGO = (code: string) =>
+  `https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblem_${code}.png`;
+
 export const TEAMS: TeamInfo[] = [
-  { code: "LG", name: "LG" },
-  { code: "KT", name: "KT" },
-  { code: "SK", name: "SSG" },
-  { code: "NC", name: "NC" },
-  { code: "OB", name: "두산" },
-  { code: "HT", name: "KIA" },
-  { code: "LT", name: "롯데" },
-  { code: "SS", name: "삼성" },
-  { code: "HH", name: "한화" },
-  { code: "WO", name: "키움" },
+  { code: "LG", name: "LG", logo: LOGO("LG") },
+  { code: "KT", name: "KT", logo: LOGO("KT") },
+  { code: "SK", name: "SSG", logo: LOGO("SK") },
+  { code: "NC", name: "NC", logo: LOGO("NC") },
+  { code: "OB", name: "두산", logo: LOGO("OB") },
+  { code: "HT", name: "KIA", logo: LOGO("HT") },
+  { code: "LT", name: "롯데", logo: LOGO("LT") },
+  { code: "SS", name: "삼성", logo: LOGO("SS") },
+  { code: "HH", name: "한화", logo: LOGO("HH") },
+  { code: "WO", name: "키움", logo: LOGO("WO") },
 ];

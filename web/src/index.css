@@ -78,6 +78,40 @@ button.active {
   color: #fff;
 }
 
+.team-logo-btn {
+  padding: 3px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1a202c;
+  border: 2px solid #2d3748;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-logo-btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.team-logo-btn:hover img {
+  opacity: 1;
+}
+
+.team-logo-btn.active {
+  border-color: #3182ce;
+  background: #1a202c;
+}
+
+.team-logo-btn.active img {
+  opacity: 1;
+}
+
 /* 그리드 */
 .grid-wrap {
   overflow-x: auto;
