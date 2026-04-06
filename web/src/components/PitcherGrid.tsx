@@ -6,6 +6,10 @@ type Props = {
   rows: PitcherRow[];
 };
 
+function formatInnings(ip: string): string {
+  return ip.includes(".") ? `${ip}이닝` : `${ip}.0이닝`;
+}
+
 function formatDateHeader(d: Date): string {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -86,9 +90,9 @@ export default function PitcherGrid({ dates, rows }: Props) {
                         ]
                           .filter(Boolean)
                           .join(" ")}
-                        title={`${app.name} ${app.innings_pitched}이닝 ${app.pitch_count}구`}
+                        title={`${app.name} ${formatInnings(app.innings_pitched)} ${app.pitch_count}구`}
                       >
-                        <span className="innings">{app.innings_pitched}</span>
+                        <span className="innings">{formatInnings(app.innings_pitched)}</span>
                         <span className="pitches">{app.pitch_count}구</span>
                       </td>
                     );
