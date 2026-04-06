@@ -1,4 +1,4 @@
-import type { DayData, PitcherRow } from "../types";
+import type { DayData, PitcherRow, ReportRow } from "../types";
 
 function formatDate(d: Date): string {
   const mm = String(d.getMonth() + 1).padStart(2, "0");
@@ -72,6 +72,106 @@ export async function fetchDayData(date: Date): Promise<DayData | null> {
 
 export async function loadDateRange(dates: Date[]): Promise<(DayData | null)[]> {
   return Promise.all(dates.map(fetchDayData));
+}
+
+export function getSeasonDates(year: number): Date[] {
+  const start = getSeasonStart(year);
+  const end = getSeasonEnd(year);
+  const dates: Date[] = [];
+  const d = new Date(start);
+  while (d <= end) {
+    dates.push(new Date(d));
+    d.setDate(d.getDate() + 1);
+  }
+  return dates;
+}
+
+function ipToOuts(ip: string): number {
+  if (ip.includes(".")) {
+    const [full, partial] = ip.split(".");
+    return parseInt(full) * 3 + parseInt(partial);
+  }
+  return parseInt(ip) * 3;
+}
+
+export function outsToIp(outs: number): string {
+  const full = Math.floor(outs / 3);
+  const partial = outs % 3;
+  return partial === 0 ? `${full}` : `${full}.${partial}`;
+}
+
+function countStreaks(dates: Date[]): { streak2: number; streak3plus: number } {
+  if (dates.length === 0) return { streak2: 0, streak3plus: 0 };
+  const sorted = [...dates].sort((a, b) => a.getTime() - b.getTime());
+  let streak2 = 0;
+  let streak3plus = 0;
+  let cur = 1;
+  for (let i = 1; i < sorted.length; i++) {
+    const diff = (sorted[i].getTime() - sorted[i - 1].getTime()) / 86400000;
+    if (diff === 1) {
+      cur++;
+    } else {
+      if (cur === 2) streak2++;
+      else if (cur >= 3) streak3plus++;
+      cur = 1;
+    }
+  }
+  if (cur === 2) streak2++;
+  else if (cur >= 3) streak3plus++;
+  return { streak2, streak3plus };
+}
+
+export function buildReportRows(
+  dates: Date[],
+  dayDataList: (DayData | null)[],
+  teamFilter: string | null,
+  roleFilter: "all" | "starter" | "bullpen" = "all"
+): ReportRow[] {
+  const rowMap = new Map<string, { row: ReportRow; appearDates: Date[] }>();
+
+  dates.forEach((date, idx) => {
+    const dayData = dayDataList[idx];
+    if (!dayData) return;
+
+    for (const app of dayData.appearances) {
+      if (teamFilter && app.team_code !== teamFilter) continue;
+      if (roleFilter === "starter" && !app.is_starter) continue;
+      if (roleFilter === "bullpen" && app.is_starter) continue;
+
+      const key = app.player_id || `${app.name}_${app.team_code}`;
+      if (!rowMap.has(key)) {
+        rowMap.set(key, {
+          row: {
+            player_id: app.player_id,
+            name: app.name,
+            team: app.team,
+            team_code: app.team_code,
+            appearances: 0,
+            total_outs: 0,
+            total_pitches: 0,
+            streak2: 0,
+            streak3plus: 0,
+          },
+          appearDates: [],
+        });
+      }
+      const entry = rowMap.get(key)!;
+      entry.row.appearances++;
+      entry.row.total_outs += ipToOuts(app.innings_pitched);
+      entry.row.total_pitches += app.pitch_count;
+      entry.appearDates.push(date);
+    }
+  });
+
+  return Array.from(rowMap.values())
+    .map(({ row, appearDates }) => {
+      const { streak2, streak3plus } = countStreaks(appearDates);
+      return { ...row, streak2, streak3plus };
+    })
+    .sort((a, b) => {
+      if (a.team_code !== b.team_code) return a.team_code.localeCompare(b.team_code);
+      return a.name.localeCompare(b.name);
+    });
 }
 
 export function buildPitcherGrid(

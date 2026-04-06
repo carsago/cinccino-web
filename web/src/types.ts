@@ -24,6 +24,19 @@ export type DayData = {
   appearances: Appearance[];
 };
 
+// 리포트 행 데이터
+export type ReportRow = {
+  player_id: string;
+  name: string;
+  team: string;
+  team_code: string;
+  appearances: number;
+  total_outs: number; // 이닝 계산용 (3 = 1이닝)
+  total_pitches: number;
+  streak2: number;   // 2연투 횟수
+  streak3plus: number; // 3연투+ 횟수
+};
+
 // 그리드에서 한 투수의 행 데이터
 export type PitcherRow = {
   player_id: string;
