@@ -1,0 +1,127 @@
+{
+  "date": "2025-10-07",
+  "games": [
+    {
+      "game_id": 80100284,
+      "home": "SS",
+      "home_name": "삼성 라이온즈",
+      "away": "NC",
+      "away_name": "NC 다이노스",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "69446",
+      "name": "원태인",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "6",
+      "pitch_count": 106,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "62360",
+      "name": "김태훈",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "0.2",
+      "pitch_count": 9,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "50464",
+      "name": "이승민",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 12,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "55460",
+      "name": "가라비토",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1.1",
+      "pitch_count": 18,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "55912",
+      "name": "로건",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "6",
+      "pitch_count": 105,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "69969",
+      "name": "전사민",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1",
+      "pitch_count": 14,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "54904",
+      "name": "손주환",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "0.1",
+      "pitch_count": 7,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100284
+    },
+    {
+      "player_id": "68639",
+      "name": "하준영",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "0.2",
+      "pitch_count": 7,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100284
+    }
+  ]
+}

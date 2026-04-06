@@ -1,0 +1,141 @@
+{
+  "date": "2025-10-02",
+  "games": [
+    {
+      "game_id": 80100240,
+      "home": "HT",
+      "home_name": "KIA 타이거즈",
+      "away": "SK",
+      "away_name": "SSG 랜더스",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "53615",
+      "name": "이도현",
+      "team": "KIA 타이거즈",
+      "team_code": "HT",
+      "innings_pitched": "5",
+      "pitch_count": 69,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "52641",
+      "name": "황동하",
+      "team": "KIA 타이거즈",
+      "team_code": "HT",
+      "innings_pitched": "1",
+      "pitch_count": 16,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "63342",
+      "name": "조상우",
+      "team": "KIA 타이거즈",
+      "team_code": "HT",
+      "innings_pitched": "1",
+      "pitch_count": 18,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "69620",
+      "name": "김기훈",
+      "team": "KIA 타이거즈",
+      "team_code": "HT",
+      "innings_pitched": "1",
+      "pitch_count": 21,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "68928",
+      "name": "김시훈",
+      "team": "KIA 타이거즈",
+      "team_code": "HT",
+      "innings_pitched": "1",
+      "pitch_count": 9,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "53898",
+      "name": "송영진",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "5",
+      "pitch_count": 80,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "65343",
+      "name": "김택형",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "1",
+      "pitch_count": 9,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "54802",
+      "name": "박기호",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "1",
+      "pitch_count": 24,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    },
+    {
+      "player_id": "68092",
+      "name": "한두솔",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "1",
+      "pitch_count": 13,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80100240
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "date": "2025-06-20",
+  "games": [
+    {
+      "game_id": 80090736,
+      "home": "LT",
+      "home_name": "롯데 자이언츠",
+      "away": "SS",
+      "away_name": "삼성 라이온즈",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "55532",
+      "name": "감보아",
+      "team": "롯데 자이언츠",
+      "team_code": "LT",
+      "innings_pitched": "6",
+      "pitch_count": 98,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "54537",
+      "name": "정현수",
+      "team": "롯데 자이언츠",
+      "team_code": "LT",
+      "innings_pitched": "1",
+      "pitch_count": 17,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "68242",
+      "name": "정철원",
+      "team": "롯데 자이언츠",
+      "team_code": "LT",
+      "innings_pitched": "1",
+      "pitch_count": 15,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "62528",
+      "name": "김원중",
+      "team": "롯데 자이언츠",
+      "team_code": "LT",
+      "innings_pitched": "1",
+      "pitch_count": 17,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "54401",
+      "name": "김대호",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "3.2",
+      "pitch_count": 62,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "50464",
+      "name": "이승민",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1.1",
+      "pitch_count": 27,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "75421",
+      "name": "오승환",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 19,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "62360",
+      "name": "김태훈",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 16,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090736
+    },
+    {
+      "player_id": "65062",
+      "name": "김재윤",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 17,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090736
+    }
+  ]
+}

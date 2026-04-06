@@ -30,9 +30,10 @@ body {
   color: #fff;
 }
 
-.season {
-  font-size: 13px;
-  color: #64748b;
+.year-filter {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
 }
 
 /* 컨트롤 */

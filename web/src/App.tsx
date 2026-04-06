@@ -6,9 +6,11 @@ import PitcherGrid from "./components/PitcherGrid";
 import "./index.css";
 
 const RANGE_OPTIONS = [7, 21] as const;
+const YEAR_OPTIONS = [2026, 2025] as const;
 type RoleFilter = "all" | "starter" | "bullpen";
 
 export default function App() {
+  const [year, setYear] = useState<2025 | 2026>(2026);
   const [rangeDays, setRangeDays] = useState<7 | 21>(7);
   const [teamFilter, setTeamFilter] = useState<string | null>(null);
   const [roleFilter, setRoleFilter] = useState<RoleFilter>("all");
@@ -19,13 +21,13 @@ export default function App() {
 
   useEffect(() => {
     setLoading(true);
-    const newDates = getDateRange(rangeDays);
+    const newDates = getDateRange(rangeDays, year);
     setDates(newDates);
     loadDateRange(newDates).then((data) => {
       setDayDataList(data);
       setLoading(false);
     });
-  }, [rangeDays]);
+  }, [rangeDays, year]);
 
   useEffect(() => {
     if (dates.length === 0 || dayDataList.length === 0) return;
@@ -36,7 +38,17 @@ export default function App() {
     <div className="app">
       <header className="header">
         <h1>KBO 투수 트래커</h1>
-        <span className="season">2026 시즌</span>
+        <div className="year-filter">
+          {YEAR_OPTIONS.map((y) => (
+            <button
+              key={y}
+              className={year === y ? "active" : ""}
+              onClick={() => setYear(y)}
+            >
+              {y}
+            </button>
+          ))}
+        </div>
       </header>
 
       <div className="controls">

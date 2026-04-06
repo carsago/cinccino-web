@@ -6,12 +6,19 @@ function formatDate(d: Date): string {
   return `${mm}${dd}`;
 }
 
-export function getDateRange(days: number): Date[] {
+export function getDateRange(days: number, year?: number): Date[] {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
+  // 과거 연도는 시즌 마지막 날 기준
+  const SEASON_END: Record<number, Date> = {
+    2025: new Date(2025, 9, 15), // 10/15
+  };
+  const base = year && SEASON_END[year] ? SEASON_END[year] : today;
+
   return Array.from({ length: days }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(today.getDate() - (days - 1 - i));
+    const d = new Date(base);
+    d.setDate(base.getDate() - (days - 1 - i));
     return d;
   });
 }

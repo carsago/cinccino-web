@@ -1,0 +1,43 @@
+{
+  "date": "2025-06-13",
+  "games": [
+    {
+      "game_id": 80090703,
+      "home": "NC",
+      "home_name": "NC 다이노스",
+      "away": "HT",
+      "away_name": "KIA 타이거즈",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "68902",
+      "name": "신민혁",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "5",
+      "pitch_count": 77,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090703
+    },
+    {
+      "player_id": "55633",
+      "name": "올러",
+      "team": "KIA 타이거즈",
+      "team_code": "HT",
+      "innings_pitched": "5",
+      "pitch_count": 92,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090703
+    }
+  ]
+}
