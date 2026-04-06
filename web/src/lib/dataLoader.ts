@@ -20,7 +20,7 @@ export async function fetchDayData(date: Date): Promise<DayData | null> {
   const mmdd = formatDate(date);
   const year = date.getFullYear();
   try {
-    const res = await fetch(`/data/${year}/${mmdd}.json`);
+    const res = await fetch(`${import.meta.env.BASE_URL}data/${year}/${mmdd}.json`);
     if (!res.ok) return null;
     const ct = res.headers.get("content-type") ?? "";
     if (!ct.includes("json")) return null;
