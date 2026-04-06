@@ -97,7 +97,7 @@ function ipToOuts(ip: string): number {
 export function outsToIp(outs: number): string {
   const full = Math.floor(outs / 3);
   const partial = outs % 3;
-  return partial === 0 ? `${full}` : `${full}.${partial}`;
+  return `${full}.${partial}`;
 }
 
 function countStreaks(dates: Date[]): { streak2: number; streak3plus: number } {
