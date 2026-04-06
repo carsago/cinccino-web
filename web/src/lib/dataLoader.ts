@@ -6,14 +6,26 @@ function formatDate(d: Date): string {
   return `${mm}${dd}`;
 }
 
+const SEASON_START: Record<number, Date> = {
+  2025: new Date(2025, 2, 22), // 3/22
+  2026: new Date(2026, 2, 28), // 3/28
+};
+
+const SEASON_END: Record<number, Date> = {
+  2025: new Date(2025, 9, 15), // 10/15
+};
+
+export function getSeasonEnd(year: number): Date {
+  return SEASON_END[year] ?? new Date();
+}
+
+export function getSeasonStart(year: number): Date {
+  return SEASON_START[year] ?? new Date(year, 2, 1);
+}
+
 export function getDateRange(days: number, year?: number): Date[] {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-
-  // 과거 연도는 시즌 마지막 날 기준
-  const SEASON_END: Record<number, Date> = {
-    2025: new Date(2025, 9, 15), // 10/15
-  };
   const base = year && SEASON_END[year] ? SEASON_END[year] : today;
 
   return Array.from({ length: days }, (_, i) => {
@@ -21,6 +33,27 @@ export function getDateRange(days: number, year?: number): Date[] {
     d.setDate(base.getDate() - (days - 1 - i));
     return d;
   });
+}
+
+export function getMonthDates(year: number, month: number): Date[] {
+  const seasonStart = getSeasonStart(year);
+  const seasonEnd = getSeasonEnd(year);
+
+  const firstOfMonth = new Date(year, month, 1);
+  const lastOfMonth = new Date(year, month + 1, 0);
+
+  const start = firstOfMonth < seasonStart ? seasonStart : firstOfMonth;
+  const end = lastOfMonth > seasonEnd ? seasonEnd : lastOfMonth;
+
+  if (start > end) return [];
+
+  const dates: Date[] = [];
+  const d = new Date(start);
+  while (d <= end) {
+    dates.push(new Date(d));
+    d.setDate(d.getDate() + 1);
+  }
+  return dates;
 }
 
 export async function fetchDayData(date: Date): Promise<DayData | null> {

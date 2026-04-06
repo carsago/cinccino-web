@@ -28,7 +28,7 @@ function pitchIntensity(pitchCount: number): string {
 
 export default function PitcherGrid({ dates, rows }: Props) {
   if (rows.length === 0) {
-    return <div className="empty">데이터 없음</div>;
+    return <div className="empty">이 기간에 해당 팀의 경기 데이터가 없습니다.<br />포스트시즌 진출 여부를 확인하거나 다른 기간을 선택해 주세요.</div>;
   }
 
   const today = new Date();
