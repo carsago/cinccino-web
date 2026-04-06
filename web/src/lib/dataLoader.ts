@@ -7,12 +7,20 @@ function formatDate(d: Date): string {
 }
 
 const SEASON_START: Record<number, Date> = {
+  2021: new Date(2021, 2, 21), // 3/21
+  2022: new Date(2022, 2, 20), // 3/20
+  2023: new Date(2023, 2, 20), // 3/20
+  2024: new Date(2024, 2, 23), // 3/23
   2025: new Date(2025, 2, 22), // 3/22
   2026: new Date(2026, 2, 28), // 3/28
 };
 
 const SEASON_END: Record<number, Date> = {
-  2025: new Date(2025, 9, 15), // 10/15
+  2021: new Date(2021, 10, 1),  // 11/1
+  2022: new Date(2022, 10, 1),  // 11/1
+  2023: new Date(2023, 9, 15),  // 10/15
+  2024: new Date(2024, 9, 15),  // 10/15
+  2025: new Date(2025, 9, 15),  // 10/15
 };
 
 export function getSeasonEnd(year: number): Date {

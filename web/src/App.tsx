@@ -22,7 +22,7 @@ type ReportPeriod = "month" | "season";
 type SortKey = "appearances" | "total_outs" | "total_pitches" | "streak2" | "streak3plus";
 type SortDir = "desc" | "asc";
 
-const YEAR_OPTIONS = [2026, 2025] as const;
+const YEAR_OPTIONS = [2026, 2025, 2024, 2023, 2022, 2021] as const;
 
 function getDefaultMonth(year: number): Date {
   const end = getSeasonEnd(year);
@@ -30,7 +30,7 @@ function getDefaultMonth(year: number): Date {
 }
 
 export default function App() {
-  const [year, setYear] = useState<2025 | 2026>(2026);
+  const [year, setYear] = useState<2021 | 2022 | 2023 | 2024 | 2025 | 2026>(2026);
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const [rangeMode, setRangeMode] = useState<RangeMode>(10);
   const [viewMonth, setViewMonth] = useState<Date>(() => getDefaultMonth(2026));
@@ -42,7 +42,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [dayDataList, setDayDataList] = useState<(DayData | null)[]>([]);
 
-  const [reportPeriod, setReportPeriod] = useState<ReportPeriod>("month");
+  const [reportPeriod, setReportPeriod] = useState<ReportPeriod>("season");
   const [reportViewMonth, setReportViewMonth] = useState<Date>(() => getDefaultMonth(2026));
   const [reportRows, setReportRows] = useState<ReportRow[]>([]);
   const [reportLoading, setReportLoading] = useState(false);
@@ -76,7 +76,7 @@ export default function App() {
     });
   }, [viewMode, reportPeriod, year, reportViewMonth, teamFilter, roleFilter]);
 
-  function handleYearChange(y: 2025 | 2026) {
+  function handleYearChange(y: 2021 | 2022 | 2023 | 2024 | 2025 | 2026) {
     setYear(y);
     const m = getDefaultMonth(y);
     setViewMonth(m);
@@ -98,11 +98,6 @@ export default function App() {
       {/* 헤더 */}
       <header className="header">
         <h1>KBO 투수 트래커</h1>
-        <div className="year-filter">
-          {YEAR_OPTIONS.map((y) => (
-            <button key={y} className={year === y ? "active" : ""} onClick={() => handleYearChange(y)}>{y}</button>
-          ))}
-        </div>
       </header>
 
       {/* 뷰 탭 */}
@@ -154,6 +149,13 @@ export default function App() {
               <button className={reportPeriod === "season" ? "active" : ""} onClick={() => setReportPeriod("season")}>시즌 전체</button>
             </div>
           )}
+
+          {/* 연도 */}
+          <div className="role-filter">
+            {YEAR_OPTIONS.map((y) => (
+              <button key={y} className={year === y ? "active" : ""} onClick={() => handleYearChange(y)}>{y}</button>
+            ))}
+          </div>
         </div>
       </div>
 
