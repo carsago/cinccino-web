@@ -1,0 +1,113 @@
+{
+  "date": "2023-10-22",
+  "games": [
+    {
+      "game_id": 80078447,
+      "home": "SK",
+      "home_name": "SSG 랜더스",
+      "away": "NC",
+      "away_name": "NC 다이노스",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "53825",
+      "name": "엘리아스",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "8",
+      "pitch_count": 88,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078447
+    },
+    {
+      "player_id": "73211",
+      "name": "노경은",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "0.1",
+      "pitch_count": 12,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078447
+    },
+    {
+      "player_id": "61895",
+      "name": "서진용",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "0.2",
+      "pitch_count": 14,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078447
+    },
+    {
+      "player_id": "68902",
+      "name": "신민혁",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "5.2",
+      "pitch_count": 87,
+      "is_starter": true,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078447
+    },
+    {
+      "player_id": "68900",
+      "name": "김영규",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1.1",
+      "pitch_count": 17,
+      "is_starter": false,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078447
+    },
+    {
+      "player_id": "65949",
+      "name": "류진욱",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1",
+      "pitch_count": 15,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80078447
+    },
+    {
+      "player_id": "77211",
+      "name": "이용찬",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1",
+      "pitch_count": 15,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80078447
+    }
+  ]
+}

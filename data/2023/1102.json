@@ -1,0 +1,127 @@
+{
+  "date": "2023-11-02",
+  "games": [
+    {
+      "game_id": 80078466,
+      "home": "NC",
+      "home_name": "NC 다이노스",
+      "away": "KT",
+      "away_name": "kt wiz",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "53909",
+      "name": "태너",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "6",
+      "pitch_count": 105,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "68900",
+      "name": "김영규",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "0.2",
+      "pitch_count": 20,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "60263",
+      "name": "이재학",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1.1",
+      "pitch_count": 14,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "66920",
+      "name": "최성영",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1",
+      "pitch_count": 16,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "64001",
+      "name": "고영표",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "6",
+      "pitch_count": 105,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "69041",
+      "name": "손동현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "1",
+      "pitch_count": 12,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "52060",
+      "name": "박영현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "1",
+      "pitch_count": 16,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80078466
+    },
+    {
+      "player_id": "65062",
+      "name": "김재윤",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "1",
+      "pitch_count": 18,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80078466
+    }
+  ]
+}

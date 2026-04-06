@@ -1,0 +1,113 @@
+{
+  "date": "2023-10-31",
+  "games": [
+    {
+      "game_id": 80078465,
+      "home": "KT",
+      "home_name": "kt wiz",
+      "away": "NC",
+      "away_name": "NC 다이노스",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "52043",
+      "name": "벤자민",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "5",
+      "pitch_count": 82,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078465
+    },
+    {
+      "player_id": "69041",
+      "name": "손동현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "2",
+      "pitch_count": 16,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078465
+    },
+    {
+      "player_id": "52060",
+      "name": "박영현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "2",
+      "pitch_count": 21,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078465
+    },
+    {
+      "player_id": "68902",
+      "name": "신민혁",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "6.1",
+      "pitch_count": 81,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078465
+    },
+    {
+      "player_id": "65949",
+      "name": "류진욱",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1",
+      "pitch_count": 18,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80078465
+    },
+    {
+      "player_id": "63959",
+      "name": "임정호",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "0.1",
+      "pitch_count": 2,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80078465
+    },
+    {
+      "player_id": "77211",
+      "name": "이용찬",
+      "team": "NC 다이노스",
+      "team_code": "NC",
+      "innings_pitched": "1.1",
+      "pitch_count": 25,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80078465
+    }
+  ]
+}

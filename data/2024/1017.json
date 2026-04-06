@@ -1,0 +1,141 @@
+{
+  "date": "2024-10-17",
+  "games": [
+    {
+      "game_id": 80089577,
+      "home": "LG",
+      "home_name": "LG 트윈스",
+      "away": "SS",
+      "away_name": "삼성 라이온즈",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "61101",
+      "name": "임찬규",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "5.1",
+      "pitch_count": 84,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "54119",
+      "name": "에르난데스",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "3.2",
+      "pitch_count": 60,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "50441",
+      "name": "황동재",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "3",
+      "pitch_count": 56,
+      "is_starter": true,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "51454",
+      "name": "이승현",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1.2",
+      "pitch_count": 26,
+      "is_starter": false,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "73801",
+      "name": "송은범",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "0",
+      "pitch_count": 4,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "68403",
+      "name": "김무신",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "0.1",
+      "pitch_count": 1,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "63960",
+      "name": "이상민",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "0.2",
+      "pitch_count": 12,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "62360",
+      "name": "김태훈",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1.1",
+      "pitch_count": 12,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    },
+    {
+      "player_id": "78352",
+      "name": "임창민",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 11,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089577
+    }
+  ]
+}

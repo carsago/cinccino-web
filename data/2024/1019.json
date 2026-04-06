@@ -1,0 +1,113 @@
+{
+  "date": "2024-10-19",
+  "games": [
+    {
+      "game_id": 80090120,
+      "home": "LG",
+      "home_name": "LG 트윈스",
+      "away": "SS",
+      "away_name": "삼성 라이온즈",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "54134",
+      "name": "엔스",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "6",
+      "pitch_count": 103,
+      "is_starter": true,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090120
+    },
+    {
+      "player_id": "67143",
+      "name": "손주영",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "1.2",
+      "pitch_count": 25,
+      "is_starter": false,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090120
+    },
+    {
+      "player_id": "75867",
+      "name": "김진성",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "1",
+      "pitch_count": 23,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090120
+    },
+    {
+      "player_id": "50106",
+      "name": "유영찬",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "0.1",
+      "pitch_count": 5,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090120
+    },
+    {
+      "player_id": "54443",
+      "name": "레예스",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "7",
+      "pitch_count": 110,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80090120
+    },
+    {
+      "player_id": "78352",
+      "name": "임창민",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 19,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80090120
+    },
+    {
+      "player_id": "65062",
+      "name": "김재윤",
+      "team": "삼성 라이온즈",
+      "team_code": "SS",
+      "innings_pitched": "1",
+      "pitch_count": 6,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80090120
+    }
+  ]
+}

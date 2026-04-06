@@ -1,0 +1,113 @@
+{
+  "date": "2023-11-07",
+  "games": [
+    {
+      "game_id": 80078477,
+      "home": "LG",
+      "home_name": "LG 트윈스",
+      "away": "KT",
+      "away_name": "kt wiz",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "69103",
+      "name": "켈리",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "6.1",
+      "pitch_count": 92,
+      "is_starter": true,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078477
+    },
+    {
+      "player_id": "69134",
+      "name": "이정용",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "0.2",
+      "pitch_count": 12,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078477
+    },
+    {
+      "player_id": "63248",
+      "name": "함덕주",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "1",
+      "pitch_count": 22,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078477
+    },
+    {
+      "player_id": "67119",
+      "name": "고우석",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "1",
+      "pitch_count": 30,
+      "is_starter": false,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078477
+    },
+    {
+      "player_id": "64001",
+      "name": "고영표",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "6",
+      "pitch_count": 97,
+      "is_starter": true,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078477
+    },
+    {
+      "player_id": "69041",
+      "name": "손동현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "2",
+      "pitch_count": 22,
+      "is_starter": false,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80078477
+    },
+    {
+      "player_id": "52060",
+      "name": "박영현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "1",
+      "pitch_count": 10,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80078477
+    }
+  ]
+}

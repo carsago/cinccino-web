@@ -1,0 +1,99 @@
+{
+  "date": "2022-11-08",
+  "games": [
+    {
+      "game_id": 80064585,
+      "home": "SK",
+      "home_name": "SSG 랜더스",
+      "away": "WO",
+      "away_name": "키움 히어로즈",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "51863",
+      "name": "폰트",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "7.2",
+      "pitch_count": 90,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80064585
+    },
+    {
+      "player_id": "65343",
+      "name": "김택형",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "0.1",
+      "pitch_count": 4,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80064585
+    },
+    {
+      "player_id": "60841",
+      "name": "박종훈",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "0.1",
+      "pitch_count": 4,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80064585
+    },
+    {
+      "player_id": "77829",
+      "name": "김광현",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "0.2",
+      "pitch_count": 5,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80064585
+    },
+    {
+      "player_id": "52308",
+      "name": "애플러",
+      "team": "키움 히어로즈",
+      "team_code": "WO",
+      "innings_pitched": "5",
+      "pitch_count": 98,
+      "is_starter": true,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80064585
+    },
+    {
+      "player_id": "69343",
+      "name": "요키시",
+      "team": "키움 히어로즈",
+      "team_code": "WO",
+      "innings_pitched": "3",
+      "pitch_count": 35,
+      "is_starter": false,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80064585
+    }
+  ]
+}
