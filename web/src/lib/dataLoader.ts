@@ -38,7 +38,7 @@ export function buildPitcherGrid(
   dates: Date[],
   dayDataList: (DayData | null)[],
   teamFilter: string | null,
-  excludeStarters = false
+  roleFilter: "all" | "starter" | "bullpen" = "all"
 ): PitcherRow[] {
   // player_id → PitcherRow 맵
   const rowMap = new Map<string, PitcherRow>();
@@ -49,7 +49,8 @@ export function buildPitcherGrid(
 
     for (const app of dayData.appearances) {
       if (teamFilter && app.team_code !== teamFilter) continue;
-      if (excludeStarters && app.is_starter) continue;
+      if (roleFilter === "starter" && !app.is_starter) continue;
+      if (roleFilter === "bullpen" && app.is_starter) continue;
 
       const key = app.player_id || `${app.name}_${app.team_code}`;
 

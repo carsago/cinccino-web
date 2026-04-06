@@ -78,6 +78,23 @@ button.active {
   color: #fff;
 }
 
+.role-filter {
+  display: flex;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.role-filter button {
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid #2d3748;
+}
+
+.role-filter button:last-child {
+  border-right: none;
+}
+
 .team-logo-btn {
   padding: 3px;
   width: 36px;
