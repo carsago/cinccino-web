@@ -1,0 +1,127 @@
+{
+  "date": "2024-10-11",
+  "games": [
+    {
+      "game_id": 80089522,
+      "home": "LG",
+      "home_name": "LG 트윈스",
+      "away": "KT",
+      "away_name": "kt wiz",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "61101",
+      "name": "임찬규",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "6",
+      "pitch_count": 89,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "67143",
+      "name": "손주영",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "2",
+      "pitch_count": 29,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 1,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "54119",
+      "name": "에르난데스",
+      "team": "LG 트윈스",
+      "team_code": "LG",
+      "innings_pitched": "1",
+      "pitch_count": 16,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 1,
+      "hold": 0,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "65056",
+      "name": "엄상백",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "2",
+      "pitch_count": 38,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "69041",
+      "name": "손동현",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "1.1",
+      "pitch_count": 19,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "50030",
+      "name": "소형준",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "2.2",
+      "pitch_count": 25,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "64001",
+      "name": "고영표",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "1.1",
+      "pitch_count": 25,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089522
+    },
+    {
+      "player_id": "52043",
+      "name": "벤자민",
+      "team": "kt wiz",
+      "team_code": "KT",
+      "innings_pitched": "0.2",
+      "pitch_count": 11,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80089522
+    }
+  ]
+}

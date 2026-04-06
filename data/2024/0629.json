@@ -1,0 +1,71 @@
+{
+  "date": "2024-06-29",
+  "games": [
+    {
+      "game_id": 80079108,
+      "home": "OB",
+      "home_name": "두산 베어스",
+      "away": "SK",
+      "away_name": "SSG 랜더스",
+      "status": "END"
+    }
+  ],
+  "appearances": [
+    {
+      "player_id": "51230",
+      "name": "김동주",
+      "team": "두산 베어스",
+      "team_code": "OB",
+      "innings_pitched": "7",
+      "pitch_count": 103,
+      "is_starter": true,
+      "win": 0,
+      "loss": 1,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80079108
+    },
+    {
+      "player_id": "54833",
+      "name": "앤더슨",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "5",
+      "pitch_count": 88,
+      "is_starter": true,
+      "win": 1,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80079108
+    },
+    {
+      "player_id": "51897",
+      "name": "조병현",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "1",
+      "pitch_count": 20,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80079108
+    },
+    {
+      "player_id": "53892",
+      "name": "이로운",
+      "team": "SSG 랜더스",
+      "team_code": "SK",
+      "innings_pitched": "0",
+      "pitch_count": 0,
+      "is_starter": false,
+      "win": 0,
+      "loss": 0,
+      "save": 0,
+      "hold": 0,
+      "game_id": 80079108
+    }
+  ]
+}
