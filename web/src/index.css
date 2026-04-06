@@ -36,24 +36,67 @@ body {
   margin-left: auto;
 }
 
+/* 뷰 탭 */
+.view-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #2d3748;
+}
+
+.view-tab {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #718096;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: -1px;
+}
+
+.view-tab:hover {
+  color: #e2e8f0;
+  border-color: transparent;
+}
+
+.view-tab.active {
+  background: transparent;
+  color: #fff;
+  border-bottom-color: #3182ce;
+}
+
 /* 컨트롤 */
 .controls {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 16px;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.team-filter,
-.range-filter {
+.team-filter-wrap {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.team-filter-wrap > button {
+  flex-shrink: 0;
+}
+
+.team-filter-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
-}
-
-.range-filter {
-  margin-left: auto;
+  gap: 6px;
+  align-items: center;
 }
 
 button {
@@ -130,13 +173,6 @@ button.active {
   opacity: 1;
 }
 
-/* 리포트 컨트롤 */
-.report-controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
 
 /* 리포트 테이블 */
 .col-stat {

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { ReportRow } from "../types";
 import { TEAMS } from "../types";
 import { outsToIp } from "../lib/dataLoader";
@@ -8,24 +7,14 @@ type SortDir = "desc" | "asc";
 
 type Props = {
   rows: ReportRow[];
+  sortKey: SortKey | null;
+  sortDir: SortDir;
+  onSort: (key: SortKey) => void;
 };
 
-export default function ReportTable({ rows }: Props) {
-  const [sortKey, setSortKey] = useState<SortKey | null>(null);
-  const [sortDir, setSortDir] = useState<SortDir>("desc");
-
+export default function ReportTable({ rows, sortKey, sortDir, onSort }: Props) {
   if (rows.length === 0) {
     return <div className="empty">이 기간에 해당 데이터가 없습니다.</div>;
-  }
-
-  function handleSort(key: SortKey) {
-    if (sortKey === key) {
-      if (sortDir === "desc") setSortDir("asc");
-      else { setSortKey(null); setSortDir("desc"); }
-    } else {
-      setSortKey(key);
-      setSortDir("desc");
-    }
   }
 
   function sortIcon(key: SortKey) {
@@ -42,8 +31,6 @@ export default function ReportTable({ rows }: Props) {
 
   const teamOrder = TEAMS.map((t) => t.code);
 
-  // 정렬 없을 때: 팀 그룹핑 (rowSpan)
-  // 정렬 있을 때: flat 리스트
   const renderGrouped = () => {
     const rowsByTeam = new Map<string, ReportRow[]>();
     for (const row of sorted) {
@@ -103,19 +90,19 @@ export default function ReportTable({ rows }: Props) {
           <tr>
             <th className="col-team">팀</th>
             <th className="col-name">투수</th>
-            <th className="col-stat sortable" onClick={() => handleSort("appearances")}>
+            <th className="col-stat sortable" onClick={() => onSort("appearances")}>
               등판{sortIcon("appearances")}
             </th>
-            <th className="col-stat col-innings sortable" onClick={() => handleSort("total_outs")}>
+            <th className="col-stat col-innings sortable" onClick={() => onSort("total_outs")}>
               누적 이닝{sortIcon("total_outs")}
             </th>
-            <th className="col-stat col-pitches sortable" onClick={() => handleSort("total_pitches")}>
+            <th className="col-stat col-pitches sortable" onClick={() => onSort("total_pitches")}>
               누적 투구수{sortIcon("total_pitches")}
             </th>
-            <th className="col-stat col-streak2 sortable" onClick={() => handleSort("streak2")}>
+            <th className="col-stat col-streak2 sortable" onClick={() => onSort("streak2")}>
               2연투{sortIcon("streak2")}
             </th>
-            <th className="col-stat col-streak3 sortable" onClick={() => handleSort("streak3plus")}>
+            <th className="col-stat col-streak3 sortable" onClick={() => onSort("streak3plus")}>
               3연투+{sortIcon("streak3plus")}
             </th>
           </tr>
