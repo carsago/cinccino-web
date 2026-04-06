@@ -76,7 +76,7 @@ export default function PitcherGrid({ dates, rows }: Props) {
                 <tr key={row.player_id || row.name} className={rowIdx === 0 ? "first-of-team" : ""}>
                   {rowIdx === 0 && (
                     <td className="col-team" rowSpan={teamRows.length}>
-                      {teamInfo?.name ?? code}
+                      {teamInfo ? <img src={teamInfo.logo} alt={teamInfo.name} className="team-logo-cell" /> : code}
                     </td>
                   )}
                   <td className="col-name">

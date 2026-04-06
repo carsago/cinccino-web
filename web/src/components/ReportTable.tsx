@@ -29,46 +29,6 @@ export default function ReportTable({ rows, sortKey, sortDir, onSort }: Props) {
       })
     : rows;
 
-  const teamOrder = TEAMS.map((t) => t.code);
-
-  const renderGrouped = () => {
-    const rowsByTeam = new Map<string, ReportRow[]>();
-    for (const row of sorted) {
-      const list = rowsByTeam.get(row.team_code) ?? [];
-      list.push(row);
-      rowsByTeam.set(row.team_code, list);
-    }
-    return teamOrder
-      .filter((code) => rowsByTeam.has(code))
-      .flatMap((code) => {
-        const teamRows = rowsByTeam.get(code)!;
-        const teamInfo = TEAMS.find((t) => t.code === code);
-        return teamRows.map((row, idx) => (
-          <tr key={row.player_id || row.name} className={idx === 0 ? "first-of-team" : ""}>
-            {idx === 0 && (
-              <td className="col-team" rowSpan={teamRows.length}>{teamInfo?.name ?? code}</td>
-            )}
-            <td className="col-name">{row.name}</td>
-            {renderCells(row)}
-          </tr>
-        ));
-      });
-  };
-
-  const renderFlat = () =>
-    sorted.map((row, idx) => {
-      const teamInfo = TEAMS.find((t) => t.code === row.team_code);
-      const prev = sorted[idx - 1];
-      const isNewTeam = !prev || prev.team_code !== row.team_code;
-      return (
-        <tr key={row.player_id || row.name} className={isNewTeam ? "first-of-team" : ""}>
-          <td className="col-team">{teamInfo?.name ?? row.team_code}</td>
-          <td className="col-name">{row.name}</td>
-          {renderCells(row)}
-        </tr>
-      );
-    });
-
   const renderCells = (row: ReportRow) => (
     <>
       <td className="col-stat">{row.appearances}</td>
@@ -108,7 +68,18 @@ export default function ReportTable({ rows, sortKey, sortDir, onSort }: Props) {
           </tr>
         </thead>
         <tbody>
-          {sortKey ? renderFlat() : renderGrouped()}
+          {sorted.map((row) => {
+            const teamInfo = TEAMS.find((t) => t.code === row.team_code);
+            return (
+              <tr key={row.player_id || row.name}>
+                <td className="col-team">
+                  {teamInfo ? <img src={teamInfo.logo} alt={teamInfo.name} className="team-logo-cell" /> : row.team_code}
+                </td>
+                <td className="col-name">{row.name}</td>
+                {renderCells(row)}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

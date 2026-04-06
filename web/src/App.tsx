@@ -19,6 +19,9 @@ type RangeMode = 10 | "month";
 type RoleFilter = "all" | "starter" | "bullpen";
 type ViewMode = "grid" | "report";
 type ReportPeriod = "month" | "season";
+type SeasonType = "regular" | "preseason" | "postseason";
+// null = 전체, Set = 선택된 타입들
+type SeasonTypeFilter = Set<SeasonType> | null;
 type SortKey = "appearances" | "total_outs" | "total_pitches" | "streak2" | "streak3plus";
 type SortDir = "desc" | "asc";
 
@@ -44,9 +47,24 @@ export default function App() {
 
   const [reportPeriod, setReportPeriod] = useState<ReportPeriod>("season");
   const [reportViewMonth, setReportViewMonth] = useState<Date>(() => getDefaultMonth(2026));
+  const [seasonTypeFilter, setSeasonTypeFilter] = useState<SeasonTypeFilter>(() => new Set<SeasonType>(["regular"]));
+
+  function toggleSeasonType(type: SeasonType) {
+    setSeasonTypeFilter((prev) => {
+      if (prev === null) return new Set([type]);
+      const next = new Set(prev);
+      if (next.has(type)) {
+        next.delete(type);
+        return next.size === 0 ? null : next;
+      } else {
+        next.add(type);
+        return next;
+      }
+    });
+  }
   const [reportRows, setReportRows] = useState<ReportRow[]>([]);
   const [reportLoading, setReportLoading] = useState(false);
-  const [sortKey, setSortKey] = useState<SortKey | null>(null);
+  const [sortKey, setSortKey] = useState<SortKey | null>("total_outs");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
   useEffect(() => {
@@ -64,6 +82,8 @@ export default function App() {
     setRows(buildPitcherGrid(dates, dayDataList, teamFilter, roleFilter));
   }, [dates, dayDataList, teamFilter, roleFilter]);
 
+  const seasonTypeKey = seasonTypeFilter === null ? "all" : [...seasonTypeFilter].sort().join(",");
+
   useEffect(() => {
     if (viewMode !== "report") return;
     setReportLoading(true);
@@ -71,10 +91,11 @@ export default function App() {
       ? getSeasonDates(year)
       : getMonthDates(reportViewMonth.getFullYear(), reportViewMonth.getMonth());
     loadDateRange(reportDates).then((data) => {
-      setReportRows(buildReportRows(reportDates, data, teamFilter, roleFilter));
+      setReportRows(buildReportRows(reportDates, data, teamFilter, roleFilter, seasonTypeFilter));
       setReportLoading(false);
     });
-  }, [viewMode, reportPeriod, year, reportViewMonth, teamFilter, roleFilter]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [viewMode, reportPeriod, year, reportViewMonth, teamFilter, roleFilter, seasonTypeKey]);
 
   function handleYearChange(y: 2021 | 2022 | 2023 | 2024 | 2025 | 2026) {
     setYear(y);
@@ -150,6 +171,18 @@ export default function App() {
             </div>
           )}
 
+          {/* 리포트 전용 시즌 구분 */}
+          {viewMode === "report" && (
+            <div className="role-filter">
+              {(["regular", "preseason", "postseason"] as SeasonType[]).map((type) => {
+                const label = type === "regular" ? "정규" : type === "preseason" ? "시범" : "포스트";
+                const active = seasonTypeFilter !== null && seasonTypeFilter.has(type);
+                return <button key={type} className={active ? "active" : ""} onClick={() => toggleSeasonType(type)}>{label}</button>;
+              })}
+              <button className={seasonTypeFilter === null ? "active" : ""} onClick={() => setSeasonTypeFilter(null)}>전체</button>
+            </div>
+          )}
+
           {/* 연도 */}
           <div className="role-filter">
             {YEAR_OPTIONS.map((y) => (
@@ -186,8 +219,7 @@ export default function App() {
             sortDir={sortDir}
             onSort={(key) => {
               if (sortKey === key) {
-                if (sortDir === "desc") setSortDir("asc");
-                else { setSortKey(null); setSortDir("desc"); }
+                setSortDir(sortDir === "desc" ? "asc" : "desc");
               } else {
                 setSortKey(key);
                 setSortDir("desc");

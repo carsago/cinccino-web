@@ -7,20 +7,40 @@ function formatDate(d: Date): string {
 }
 
 const SEASON_START: Record<number, Date> = {
-  2021: new Date(2021, 3, 3),  // 4/3
-  2022: new Date(2022, 3, 2),  // 4/2
-  2023: new Date(2023, 3, 1),  // 4/1
-  2024: new Date(2024, 2, 23), // 3/23
-  2025: new Date(2025, 2, 22), // 3/22
-  2026: new Date(2026, 2, 28), // 3/28
+  2021: new Date(2021, 3, 3),  // 4/3 개막
+  2022: new Date(2022, 3, 2),  // 4/2 개막
+  2023: new Date(2023, 3, 1),  // 4/1 개막
+  2024: new Date(2024, 2, 23), // 3/23 개막
+  2025: new Date(2025, 2, 22), // 3/22 개막
+  2026: new Date(2026, 2, 28), // 3/28 개막
 };
 
+// 시범경기 시작일 (데이터 첫 날 기준)
+const PRESEASON_START: Record<number, Date> = {
+  2021: new Date(2021, 2, 21), // 3/21
+  2022: new Date(2022, 2, 12), // 3/12
+  2023: new Date(2023, 2, 13), // 3/13
+  2024: new Date(2024, 2, 9),  // 3/9
+  2025: new Date(2025, 2, 8),  // 3/8
+  2026: new Date(2026, 2, 12), // 3/12
+};
+
+// 정규시즌 종료일 (마지막으로 10개 팀 모두 경기한 날)
+const REGULAR_SEASON_END: Record<number, Date> = {
+  2021: new Date(2021, 9, 17),  // 10/17
+  2022: new Date(2022, 9, 8),   // 10/8
+  2023: new Date(2023, 9, 10),  // 10/10
+  2024: new Date(2024, 8, 28),  // 9/28
+  2025: new Date(2025, 8, 30),  // 9/30
+};
+
+// 포스트시즌 포함 전체 시즌 종료일 (데이터 마지막 날 기준)
 const SEASON_END: Record<number, Date> = {
-  2021: new Date(2021, 9, 31),  // 10/31 정규시즌 종료
-  2022: new Date(2022, 9, 11),  // 10/11
-  2023: new Date(2023, 9, 17),  // 10/17
-  2024: new Date(2024, 9, 1),   // 10/1
-  2025: new Date(2025, 9, 3),   // 10/3
+  2021: new Date(2021, 10, 18), // 11/18 한국시리즈 종료
+  2022: new Date(2022, 10, 8),  // 11/8 한국시리즈 종료
+  2023: new Date(2023, 10, 13), // 11/13 한국시리즈 종료
+  2024: new Date(2024, 9, 28),  // 10/28 한국시리즈 종료
+  2025: new Date(2025, 9, 14),  // 10/14 한국시리즈 종료
 };
 
 export function getSeasonEnd(year: number): Date {
@@ -83,7 +103,7 @@ export async function loadDateRange(dates: Date[]): Promise<(DayData | null)[]> 
 }
 
 export function getSeasonDates(year: number): Date[] {
-  const start = getSeasonStart(year);
+  const start = PRESEASON_START[year] ?? getSeasonStart(year);
   const end = getSeasonEnd(year);
   const dates: Date[] = [];
   const d = new Date(start);
@@ -129,17 +149,34 @@ function countStreaks(dates: Date[]): { streak2: number; streak3plus: number } {
   return { streak2, streak3plus };
 }
 
+type SeasonType = "regular" | "preseason" | "postseason";
+
+function getDateSeasonType(date: Date, year: number): SeasonType {
+  const start = SEASON_START[year];
+  const regularEnd = REGULAR_SEASON_END[year];
+  if (start && date < start) return "preseason";
+  if (regularEnd && date > regularEnd) return "postseason";
+  return "regular";
+}
+
 export function buildReportRows(
   dates: Date[],
   dayDataList: (DayData | null)[],
   teamFilter: string | null,
-  roleFilter: "all" | "starter" | "bullpen" = "all"
+  roleFilter: "all" | "starter" | "bullpen" = "all",
+  seasonTypeFilter: Set<SeasonType> | null = null
 ): ReportRow[] {
   const rowMap = new Map<string, { row: ReportRow; appearDates: Date[] }>();
 
   dates.forEach((date, idx) => {
     const dayData = dayDataList[idx];
     if (!dayData) return;
+
+    if (seasonTypeFilter !== null) {
+      const year = date.getFullYear();
+      const st = getDateSeasonType(date, year);
+      if (!seasonTypeFilter.has(st)) return;
+    }
 
     for (const app of dayData.appearances) {
       if (teamFilter && app.team_code !== teamFilter) continue;

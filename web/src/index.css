@@ -30,11 +30,6 @@ body {
   color: #fff;
 }
 
-.year-filter {
-  display: flex;
-  gap: 4px;
-  margin-left: auto;
-}
 
 /* 뷰 탭 */
 .view-tabs {
@@ -229,9 +224,11 @@ button.active {
   line-height: 1;
 }
 
+.month-nav-btn:disabled,
 .month-nav-btn.disabled {
-  opacity: 0.3;
+  opacity: 0.2;
   cursor: default;
+  color: #4a5568;
 }
 
 /* 그리드 */
@@ -274,7 +271,8 @@ button.active {
 
 /* 팀 열 */
 .col-team {
-  min-width: 36px;
+  min-width: 40px;
+  width: 40px;
   font-size: 11px;
   font-weight: 700;
   color: #a0aec0;
@@ -282,6 +280,14 @@ button.active {
   position: sticky;
   left: 0;
   z-index: 1;
+}
+
+.team-logo-cell {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 /* 투수 이름 열 */
