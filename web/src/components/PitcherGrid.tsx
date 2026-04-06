@@ -19,11 +19,20 @@ function formatDateHeader(d: Date): string {
   return isToday ? `${mm}/${dd}★` : `${mm}/${dd}`;
 }
 
-function pitchIntensity(pitchCount: number): string {
+function totalOuts(ip: string): number {
+  if (ip.includes(".")) {
+    const [full, partial] = ip.split(".");
+    return parseInt(full) * 3 + parseInt(partial);
+  }
+  return parseInt(ip) * 3;
+}
+
+function pitchIntensity(pitchCount: number, ip: string): string {
   if (pitchCount === 0) return "";
   if (pitchCount >= 100) return "high";
   if (pitchCount >= 60) return "mid";
-  return "low";
+  if (pitchCount >= 30 || totalOuts(ip) >= 4) return "low";
+  return "dim";
 }
 
 export default function PitcherGrid({ dates, rows }: Props) {
@@ -84,7 +93,7 @@ export default function PitcherGrid({ dates, rows }: Props) {
                         key={i}
                         className={[
                           "cell-pitched",
-                          pitchIntensity(app.pitch_count),
+                          pitchIntensity(app.pitch_count, app.innings_pitched),
                           isToday ? "today" : "",
                           app.is_starter ? "starter" : "",
                         ]

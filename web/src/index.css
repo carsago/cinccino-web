@@ -274,8 +274,11 @@ button.active {
 }
 
 /* 투구수 강도별 색상 */
+.cell-pitched.dim {
+  background: #141a28;
+}
 .cell-pitched.low {
-  background: #1a2744;
+  background: #1a2f55;
 }
 .cell-pitched.mid {
   background: #1a3a44;
